@@ -10,7 +10,7 @@ export const AddContact = () => {
 	return (
 		<div>
 			<h2>Add Contact View</h2>
-			<Link to={"/contact"}>
+			<Link to={"/"}>
 				<button>View Contacts</button>
 			</Link>
 		</div>
