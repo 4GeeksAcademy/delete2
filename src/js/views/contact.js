@@ -2,7 +2,8 @@ import React, { useEffect, useContext, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { ContactCard } from "./../component/contactCard";
-import "../styles/contact.css";
+
+import "../../styles/contact.css";
 
 export const Contact = () => {
 	const params = useParams();
