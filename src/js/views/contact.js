@@ -2,6 +2,7 @@ import React, { useEffect, useContext, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { ContactCard } from "./../component/contactCard";
+import "../styles/contact.css";
 
 export const Contact = () => {
 	const params = useParams();
@@ -14,8 +15,8 @@ export const Contact = () => {
 	}, [])
 
 	return (
-	<div>
-		<div className="d-flex flex-column align-items-center justify-content-center">
+	<div className="row container mx-auto mx-5">
+		<div className="wrapper d-flex col-sm-8 flex-column align-items-center justify-content-center">
 			<div className="p-2 ">
 				<h2>{params.agendaId || store.currentAgenda}'s Agenda</h2>
 			</div>
