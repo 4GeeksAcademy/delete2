@@ -1,8 +1,7 @@
 import React from "react";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 //import { Context } from "../store/appContext";
-
 import "../../styles/demo.css";
 
 export const AddContact = () => {
@@ -11,6 +10,9 @@ export const AddContact = () => {
 	return (
 		<div>
 			<h2>Add Contact View</h2>
+			<Link to={"/contact"}>
+				<button>View Contacts</button>
+			</Link>
 		</div>
 	);
 };

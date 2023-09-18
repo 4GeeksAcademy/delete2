@@ -1,7 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			contact: [
+			demo: [
 				{
 					title: "FIRST",
 					background: "white",
@@ -12,7 +12,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			agendas: [],
+			currentAgenda: 'eduardo_rocha',
+			contacts: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -30,13 +33,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//we have to loop the entire demo array to look for the respective index
 				//and change its color
-				const contact = store.contact.map((elm, i) => {
+				const contact = store.demo.map((elm, i) => {
 					if (i === index) elm.background = color;
 					return elm;
 				});
 
 				//reset the global store
-				setStore({ contact: contact });
+				setStore({ demo: demo });
+			},
+			loadAgendas: () => {
+				fetch('https://playground.4geeks.com/apis/fake/contact/agenda')
+					.then(res => res.json())
+					.then(data => setStore({ "agendas": data }))
+			},
+			loadContacts: (agenda) => {
+				fetch(`https://playground.4geeks.com/apis/fake/contact/agenda/${agenda}`)
+					.then(res => res.json())
+					.then(data => setStore({ "contacts": data }))
+
 			}
 		}
 	};
