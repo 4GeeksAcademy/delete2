@@ -9,8 +9,13 @@ export const AddContact = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="container">
-			<ul className="list-group">
+		<div>
+			<h2>Add Contact View</h2>
+		</div>
+	);
+};
+
+/*<ul className="list-group">
 				{store.demo.map((item, index) => {
 					return (
 						<li
@@ -38,6 +43,4 @@ export const AddContact = () => {
 			<Link to="/">
 				<button className="btn btn-primary">Back home</button>
 			</Link>
-		</div>
-	);
-};
+*/
