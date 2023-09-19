@@ -1,13 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
 
-import { Agenda } from "./views/agenda";
-import { Single } from "./views/single";
+import { Contact } from "./views/contact";
+import { AddContact } from "./views/addcontact";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
 
 //create your first component
 const Layout = () => {
@@ -16,15 +13,12 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-		<div className="container mx-auto col-6">
+		<div className="wrapper mx-auto">
 			<BrowserRouter basename={basename}>
-				<ScrollToTop>
-					<Navbar />
-					<Routes>
-						<Route exact path="/" element={<Contact />} />
-						<Route path="/addcontact" element={<AddContact />} />
-					</Routes>
-				</ScrollToTop>
+				<Routes>
+					<Route exact path="/" element={<Contact />} />
+					<Route path="/addcontact" element={<AddContact />} />
+				</Routes>
 			</BrowserRouter>
 		</div>
 	);
