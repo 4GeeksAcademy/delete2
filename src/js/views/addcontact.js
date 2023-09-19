@@ -18,34 +18,25 @@ export const AddContact = () => {
 
 	return (
 		<div className="container addcontactwrapper">
-		<form onSubmit={handleSubmit} classname="addcontactfrom">
+			<form onSubmit={handleSubmit}>
 
-			<div className="row">
-				<label htmlFor="fullname" className="form-label">Full Name </label>
-				<input type="text" placeholder="Full name" id="full_name" value={formData.fullname} onChange={handleChange}/>
-			</div>
-		
-			<div className="row">
-			<label htmlFor="email" className="form-label">Email </label>
-			<input type="email" placeholder="Enter email" id="email" value={formData.email} onChange={handleChange}/>
-			</div>
-			
-			<div className="row">
-			<label htmlFor="phone" className="form-label">Phone </label>
-			<input type="number" placeholder="Enter phone" id="phone" value={formData.phone} onChange={handleChange}/>
-			</div>
-
-			<div className="row">
-			<label htmlFor="address" className="form-label">Address </label>
-			<input type="text" placeholder="Enter address" id="address" value={formData.address} onChange={handleChange}/>
-			</div>
-
-			<div className="d-flex justify-content-center text-center">
+				<label className="form-label" htmlFor="fullname">Full Name </label>
+				<input className="input-data" type="text" placeholder="Full name" id="full_name" value={formData.fullname} onChange={handleChange}/>
+				
+				<label className="form-label" htmlFor="email">Email </label>
+				<input className="input-data" type="email" placeholder="Enter email" id="email" value={formData.email} onChange={handleChange}/>
+				
+				<label className="form-label" htmlFor="phone">Phone </label>
+				<input className="input-data" type="number" placeholder="Enter phone" id="phone" value={formData.phone} onChange={handleChange}/>
+				
+				<label className="form-label" htmlFor="address">Address </label>
+				<input className="input-data" type="text" placeholder="Enter address" id="address" value={formData.address} onChange={handleChange}/>
+							
 				<Link to={"/"}>
-					<button className="btn btn-primary">Save</button>
+					<button type="button" className="addcontact-button">Save</button>
 				</Link>
-			</div>
-		</form>
+				
+			</form>	
 		</div>
 	);
 }
