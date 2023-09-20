@@ -27,7 +27,7 @@ export const Contact = () => {
 			<div className="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
 				<div>
 					{store.contacts ? 
-					store.contacts.map((contact, index) => <ContactCard key={index} fullName={contact.full_name} />) 
+					store.contacts.map((contact, index) => <ContactCard key={index} fullName={contact.fullname} />) 
 					: 
 					"Your Contact List is Empty"}
 				</div>
