@@ -22,8 +22,8 @@ const injectContext = PassedComponent => {
 		);
 
 		useEffect(() => {
-			state.actions.loadAgendas();
-			state.actions.loadContacts(state.store.currentAgenda);
+			state.actions.getAgendas();
+			state.actions.getContacts(state.store.localContacts);
 		}, []);
 
 		// The initial value for the context is not null anymore, but the current state of this component,

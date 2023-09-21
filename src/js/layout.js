@@ -1,9 +1,11 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import { Contact } from "./views/contact";
-import { AddContact } from "./views/addcontact";
 import injectContext from "./store/appContext";
+
+import { Contacts } from "./views/contacts";
+import { AddContact } from "./views/addContact";
+
 
 
 //create your first component
@@ -16,8 +18,11 @@ const Layout = () => {
 		<div className="wrapper mx-auto">
 			<BrowserRouter basename={basename}>
 				<Routes>
-					<Route exact path="/" element={<Contact />} />
-					<Route path="/addcontact" element={<AddContact />} />
+					<Route exact path="/" component={Contacts} />
+					<Route exact path="/contacts" component={Contacts} />
+					<Route exact path="/addcontact" component={AddContact} />
+					<Route exact path="/edit" component={AddContact} />
+					<Route render={() => <h1 className="notfound">Not found!</h1>} />
 				</Routes>
 			</BrowserRouter>
 		</div>
