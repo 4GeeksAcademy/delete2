@@ -22,10 +22,19 @@ const injectContext = PassedComponent => {
 		);
 
 		useEffect(() => {
-			state.actions.getAgendas();
-			state.actions.getContacts(state.store.localContacts);
-		}, []);
-
+			fetch('https://playground.4geeks.com/apis/fake/contact/agenda')
+			.then(response => response.json())
+			.then(data => {
+				let { store, actions } = state;
+				// setState(store.agenda);
+				//setState({ store: { ...state.store, agenda: data } });
+				setState({ store: { ...store, apiContacts: data }, actions });
+				console.log("FETCH", state);
+				// setState({ store: { ...store, agenda: data } });
+			})
+			.then(() => console.log("THEN", state));
+	}, []);
+	
 		// The initial value for the context is not null anymore, but the current state of this component,
 		// the context will now have a getStore, getActions and setStore functions available, because they were declared
 		// on the state of this component

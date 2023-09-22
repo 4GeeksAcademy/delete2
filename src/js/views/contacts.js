@@ -1,14 +1,12 @@
 import React, { useEffect, useContext, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import { Context } from "../store/appContext";
 import { ContactCard } from "../component/ContactCard";
 import { Modal } from "../component/Modal";
 
 
 export const Contacts = () => {
 	const params = useParams();
-	const { store, actions } = useContext(Context);
 	const [state, setState] = useState({showModal: false})
 
 	useEffect(() => {
