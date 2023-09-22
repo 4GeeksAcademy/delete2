@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 
 export const AddContact = () => {
+	const { store, actions } = useContext(Context);
 	const [full_name, setFullName] = useState('');
 	const [email, setEmail] = useState('');
 	const [phone, setPhone] = useState('');
@@ -33,7 +35,7 @@ export const AddContact = () => {
 							<input className="input-data" type="text" placeholder="Enter address" id="address" value={address} onChange={e => setAddress(e.target.value)}/>
 						</div>
 
-						<button onClick={() => actions.addANewContact()} type="submit" value="Submit" className="btn btn-primary form-control">Save</button>		
+						<button onClick={() => actions.updateContact()} type="submit" value="Submit" className="btn btn-primary addcontact-button">Save</button>		
 						<Link to={"/"}>
 							<p className="contactlink">or get back to contacts</p>
 						</Link>

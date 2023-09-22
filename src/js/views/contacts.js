@@ -1,22 +1,15 @@
-import React, { useEffect, useContext, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 
 import { ContactCard } from "../component/ContactCard";
 import { Modal } from "../component/Modal";
 
 
 export const Contacts = () => {
-	const params = useParams();
 	const [state, setState] = useState({showModal: false})
 
-	useEffect(() => {
-		if (params.agendaId) {
-			actions.getContacts(params.agendaId);
-		}
-	}, [])
-
 	return (
-		<div className="container">
+		<div className="container contactswrapper">
 			<div>
 				<p className="text-right my-3">
 					<Link className="btn btn-success" to={"/add-contacts/"}>
@@ -26,9 +19,6 @@ export const Contacts = () => {
 				<div id="contacts" className="panel-collapse collapse show" aria-expanded="true">
 					<ul className="list-group pull-down" id="contact-list">
 						<ContactCard onDelete={() => setState({ showModal: true })} />
-						<ContactCard />
-						<ContactCard />
-						<ContactCard />
 					</ul>
 				</div>
 			</div>
@@ -36,3 +26,5 @@ export const Contacts = () => {
 		</div>
 	);
 };
+
+
