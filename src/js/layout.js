@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import injectContext from "./store/appContext";
 
-import { Contacts } from "./views/contacts";
+import { Contact } from "./views/contact";
 import { AddContact } from "./views/addContact";
 
 
@@ -18,10 +18,10 @@ const Layout = () => {
 		<div className="wrapper mx-auto">
 			<BrowserRouter basename={basename}>
 				<Routes>
-					<Route exact path="/" element={<Contacts />} />
-					<Route exact path="/contacts" element={<Contacts />} />
+					<Route exact path="/" element={<Contact />} />
 					<Route exact path="/addcontact" element={<AddContact />} />
-					<Route render={() => <h1 className="notfound">Not found!</h1>} />
+					<Route path="/edit/:index" element={<AddContact />} />
+					<Route path="*" element={<h1>Not found!</h1>} />
 				</Routes>
 			</BrowserRouter>
 		</div>
