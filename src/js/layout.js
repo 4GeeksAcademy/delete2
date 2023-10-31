@@ -18,11 +18,9 @@ const Layout = () => {
 		<div className="wrapper mx-auto">
 			<BrowserRouter basename={basename}>
 				<Routes>
-					<Route exact path="/index.html" component={Contacts} />
-					<Route exact path="/" component={Contacts} />
-					<Route exact path="/contacts" component={Contacts} />
-					<Route exact path="/addcontact" component={AddContact} />
-					<Route exact path="/edit" component={AddContact} />
+					<Route exact path="/" element={<Contacts />} />
+					<Route exact path="/contacts" element={<Contacts />} />
+					<Route exact path="/addcontact" element={<AddContact />} />
 					<Route render={() => <h1 className="notfound">Not found!</h1>} />
 				</Routes>
 			</BrowserRouter>
